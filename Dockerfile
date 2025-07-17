@@ -1,6 +1,6 @@
 FROM bellsoft/liberica-runtime-container:jdk-21-crac-musl as builder
 WORKDIR /app
-ADD ../spring-crac /app/spring-crac
+ADD . /app/spring-crac
 RUN cd spring-crac && ./mvnw -Dmaven.test.skip=true clean package
 
 FROM bellsoft/liberica-runtime-container:jre-21-crac-slim-musl
